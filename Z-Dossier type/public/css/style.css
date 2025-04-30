@@ -1,0 +1,81 @@
+html{
+  /*--color-teal : teal;
+  --color-creamyWhite : #f0e9d6;
+  --color-dark green : #314F40;
+  --color-light peach : 	#FED1BC;
+  --color-salte gray : #8a9892;
+  --color-off-white : 	#f2f0ef;*/
+  --color-text : #cc5500; /* Burnt orange*/
+  --color-bg : 	#c7b8a7;/*light gray*/
+  }
+  
+  #grad {
+    /*background-color: var(--color-bg);*/
+    background-image: linear-gradient(to right,#c7ad8f, #c7bbad, #c7ad8f);
+  }
+
+  a nav {
+    text-decoration: none;
+    padding : 0.2rem;
+    color : var(--color-teal);
+  }
+  
+  /* Styles généraux */
+  body {
+    font-family: sans-serif;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Typographie */
+  h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color : var(--color-text);
+  }
+  
+  body {
+    color : var(--color-text);
+  }
+    
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Liens */
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Listes */
+  ul, ol {
+    margin-bottom: 1rem;
+  }
+  
+  li {
+    margin-left: 1.5rem;
+  }
