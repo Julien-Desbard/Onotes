@@ -1,6 +1,6 @@
 import 'dotenv/config.js' //importe le fichier .env et stock dans process.env son contenu
-import path from "node:path"; // pour gérer 
-import express from "express"; // pour gérer les templates (partials, views...)
+import path from "node:path"; // pour gérer les chemins
+import express from "express"; // pour gérer le server
 import session from "express-session"; // pour gérer la session
 import { router } from "./app/routers/router.js";
 import { setupSession } from './app/middlewares/setupsessions.middleware.js';
@@ -17,6 +17,9 @@ app.use(express.static(path.join(import.meta.dirname, "public")));
 
 // j'active le middleware pour pouvoir utiliser les formulaires en post
 app.use(express.urlencoded({ extended: true }));
+
+//body parser indiquant qu'on reçoit du Json dans le body de la requête
+app.use(express.json())
 
 //appelle le middleware pour mettre en place la session plutôt que de le faire dans le fichier index, plus lisible
 //app.use(setupSession);

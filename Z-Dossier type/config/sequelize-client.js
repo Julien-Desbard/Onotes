@@ -9,7 +9,9 @@ export const sequelize = new Sequelize(process.env.PGDATABASE, process.env.PGUSE
     // si vous avez des options spécifiques à tous les models, c'est possible de les ajouter comme ceci, la plupart des options à mettre dans define, sont possible à ajouter / modifier individuellement dans les models
     define: {
         underscored:true, // indique qu'on veut utiliser du snake case sur tous le snoms de tables, champs et les timestamps
-        timestamps:false // 
+        timestamps:false,
+        createdAt: "created_at", //renomme champs createdAt à  la sortie
+        updatedAt: "updated_at" //renomme champs createdAt à  la sortie
     }
 });
 

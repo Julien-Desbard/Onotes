@@ -1,18 +1,21 @@
 import { DataTypes, Model } from "sequelize";
-import { sequelize } from "../../config/sequelize.js";
+import { sequelize } from "../models/sequelize-client.js";
 
-export class Tag extends Model {}
+export class Tag extends Model { }
 
 Tag.init(
     {
         name: {
             type: DataTypes.TEXT,
             allowNull: false,
-            unique: true
-        }
+            unique : true,
+        },
+        color: {
+            type: DataTypes.STRING(7),
+        },
     },
     {
         sequelize,
-        tableName: "tag"
+        tableName: "tag",
     }
 );
