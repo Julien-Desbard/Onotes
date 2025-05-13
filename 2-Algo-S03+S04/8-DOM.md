@@ -2,8 +2,7 @@
 
 DOM (Document Object Model), c'est la représentation de la page que se fait le navigateur à partir du code HTML et CSS, et qui lui permet de construire l'affichage de la page.
 
-Extension _DOM node tree viewer_ : https://chromewebstore.google.com/detail/dom-node-tree-viewer/jbplakkefflidgnjhckoahendgekokfc
-
+Extension _DOM node tree viewer_ : <https://chromewebstore.google.com/detail/dom-node-tree-viewer/jbplakkefflidgnjhckoahendgekokfc>
 
 On peut modifier des choses directement dans cette représentation (en JS donc), et ça modifiera l'affichage de la page.
 
@@ -18,7 +17,6 @@ Ce DOM c'est une représentation un peu comme un arbre généalogique, avec les 
 
 Ici les deux _a_ sont frères, ce sont les enfants du _nav_
 
-
 Le DOM (Document Object Model) est une représentation de la structure d'un document web (comme une page HTML) sous forme d'objets et de propriétés interconnectés. C'est comme un arbre généalogique de la page web, où chaque élément HTML (comme un titre, un paragraphe, un lien, etc.) est un membre de l'arbre. On appelle chaque élément un "noeud" ou node en anglais
 
 Pour pouvoir faire une action sur le DOM (modifier/ajouter/supprimer), il faudra qu'on sélectionne un emplacement dans l'arbre.
@@ -29,7 +27,7 @@ On peut accéder au DOM en JavaScript avec la variable `document` (qui existe au
 
 ## Sélectionner des éléments dans le DOM
 
-Pour pouvoir agir sur les éléments du DOM (modifier, ajouter, supprimer), il va d'abord falloir les sélectionner. 
+Pour pouvoir agir sur les éléments du DOM (modifier, ajouter, supprimer), il va d'abord falloir les sélectionner.
 
 Les principaux outils utilisés sont _getElementById_, _querySelector_, _querySelectorAll_
 
@@ -48,7 +46,7 @@ console.log(element); // quand on passe la souris sur ce qui est affiché ça "s
 
 `querySelectorAll` => sélectionner tous les éléments qui correspondent au **sélecteur CSS** indiqué
 
-`querySelector` => sélectionner l'élément qui correspond au **sélecteur CSS** indiqué. S'il y a plusieurs éléments qui correspondent, c'est uniquement le premier qui sera fourni 
+`querySelector` => sélectionner l'élément qui correspond au **sélecteur CSS** indiqué. S'il y a plusieurs éléments qui correspondent, c'est uniquement le premier qui sera fourni
 
 ```js
 // tous les éléments de la classe "magic"
@@ -117,7 +115,7 @@ pElement.classList.remove('blue-text');
 
 ### Supprimer un élément
 
-On peut supprimer un élément du DOM avec `remove` : https://developer.mozilla.org/en-US/docs/Web/API/Element/remove
+On peut supprimer un élément du DOM avec `remove` : <https://developer.mozilla.org/en-US/docs/Web/API/Element/remove>
 
 ```js
 // on sélectionne un élément du DOM, par exemple ici le premier paragraphe
@@ -130,11 +128,11 @@ pElement.remove();
 ### Ajouter un nouvel élément dans le DOM
 
 4 étapes :
+
 - créer un élément => créer un paragraphe, une div... (balise HTML)
 - personnaliser l'élément (les propriétés) => par exemple textContent, innerHTML
 - sélectionner dans le DOM l'élément qui sera le parent du futur élément => par exemple avec querySelector
 - ajouter le nouvel élément en enfant de son parent => par exemple appendChild pour ajouter après les enfants déjà présents dans le parent
-
 
 Ajouter un nouveau paragraphe à la fin de l'article :
 
@@ -154,14 +152,13 @@ containerElement.appendChild(newParagraphElement);
 
 => `appendChild` permet d'ajouter un élément en dernier enfant de l'élément parent indiqué. Syntaxe : `le-parent.appendChild(le-nouvel-élément)`
 
-https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
-
+<https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild>
 
 Et si on veut ajouter un paragraphe ailleurs qu'en dernier enfant de l'article ?
 
 Il y a des outils pour ajouter un élément à un autre endroit qu'à la fin, par exemple avec `insertBefore` on peut indiquer aussi un "frère" avant lequel l'élément doit être placé :
 
-https://developer.mozilla.org/fr/docs/Web/API/Node/insertBefore
+<https://developer.mozilla.org/fr/docs/Web/API/Node/insertBefore>
 
 ```js
 // on crée un élément et on le personnalise
@@ -179,7 +176,7 @@ const brotherElement = document.querySelector('p.special');
 containerElement.insertBefore(newParagraphElement, brotherElement);
 ```
 
-# Comment utiliser ça dans un fichier JS ?
+## Comment utiliser ça dans un fichier JS ?
 
 - mettre en place dans le projet un fichier .js
 - faire le lien dans le fichier HTML : balise script à la fin du body
@@ -188,4 +185,3 @@ containerElement.insertBefore(newParagraphElement, brotherElement);
 Clic sur un bouton => on verra lundi
 
 Autre possibilité : construire le minimum de la structure dans le fichier HTML, et ensuite construire le reste de l'affichage avec JavaScript
-

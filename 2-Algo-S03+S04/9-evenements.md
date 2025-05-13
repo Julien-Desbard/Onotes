@@ -1,4 +1,4 @@
-# Evenements
+const button# Evenements
 
 Evénement = quelque chose qui se produit quand l'utilisateur interagit avec la page (souris, clavier). Et aussi quelques événements automatiques ("chargement du DOM terminé" par exemple).
 

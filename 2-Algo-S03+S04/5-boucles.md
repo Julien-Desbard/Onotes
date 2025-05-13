@@ -4,11 +4,7 @@ Permet de répéter un traitement plusieurs fois.
 
 ## Répéter un traitement "tant que" telle condition n'est pas atteinte => while
 
-
 Quand on veut répéter un traitement TANT QUE une condition est vraie ("le joueur n'a pas trouvé la bonne réponse" => boucle while)
-
-![](./schemas/boucle_while.png)
-
 
 ### Un exemple de boucle while
 
@@ -71,15 +67,11 @@ while (count < 5) {
 }
 ```
 
-
 ## Pour répéter plusieurs fois un traitement (répéter 5 fois, répéter pour chaque question...) => for
 
 Quand on veut répéter un traitement un nombre précis de fois connu à l'avance.
 
-
 ### Boucle for
-
-![](./schemas/boucle_for.png)
 
 On peut écrire différemment la boucle while du deuxième exemple :
 
@@ -116,7 +108,7 @@ console.log("code après la boucle");
 
 Résultat :
 
-```
+```js
 Ligne 1 - Je réfléchirai avant d'écrire du code
 Ligne 2 - Je réfléchirai avant d'écrire du code
 Courage on y est presque
@@ -144,7 +136,6 @@ nbCats++;
 // toto++ c'est exactement pareil que toto = toto + 1
 ```
 
-
 Sur une boucle for :
 
 ```js
@@ -152,7 +143,6 @@ for ( let count = 0 ; count < 5 ; count++ ) {
 ```
 
 ## Répéter un traitement pour chaque élément d'un tableau
-
 
 On peut utiliser une boucle _for_ en s'appuyant sur les index.
 
@@ -165,13 +155,12 @@ for (let i = 0; i < 3; i++) {
 ```
 
 > Prénom à l'index 0 : Lucie
-> 
+>
 > Prénom à l'index 1 : Franck
-> 
+>
 > Prénom à l'index 2 : Phil
 
-
-`i++` c'est une façon raccourcie d'écrire `i = i + 1`. Si on a une variable qui s'appelle _nbResults_ et qu'on écrit `nbResults++`, c'est comme si on écrivait `nbResults = nbResults + 1`. 
+`i++` c'est une façon raccourcie d'écrire `i = i + 1`. Si on a une variable qui s'appelle _nbResults_ et qu'on écrit `nbResults++`, c'est comme si on écrivait `nbResults = nbResults + 1`.
 
 🗒️ Pour parcourir tous les éléments d'un tableau il faut commencer à zéro et s'arrêter à _taille - 1_ (par exemple avec `< taille`).
 
@@ -179,7 +168,7 @@ Généralement on utilise _length_ pour ne pas avoir à compter soi-même les é
 
 `for (let i = 0; i < names.length; i++)`
 
-## Boucle for spéciale pour les tableaux : for...of 
+## Boucle for spéciale pour les tableaux : for...of
 
 ```js
 const users = ["Mélanie", "Pierre", "John", "Marie"];
@@ -194,11 +183,9 @@ for (let currentUser of users) {
 }
 ```
 
+On crée une variable qu'on nomme currentUser (on pourrait aussi l'appeler _user_ mais attention avec 2 variables qu ont juste une lettre différente dans leur nom), cette variable sera remplie successivement avec chaque élément du tableau
 
-
-On crée une variable qu'on nomme currentUser (on pourrait aussi l'appeler _user_ mais attention avec 2 variables qu ont juste une lettre différente dans leur nom), cette variable sera remplie successivement avec chaque élément du tableau 
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of>
 
 => pas besoin de créer et faire évoluer une variable pour l'index
 
@@ -222,7 +209,6 @@ for (const property in object) {
 }
 ```
 
-
 ## forEach
 
 _forEach_ n'est pas un mot-clé du langage comme _for_ ou _while_, c'est une méthode qui s'applique sur les tableaux (uniquement sur les tableaux) => appliquer une opération sur chaque élément d'un tableau, un peu comme for...of .
@@ -230,8 +216,6 @@ _forEach_ n'est pas un mot-clé du langage comme _for_ ou _while_, c'est une mé
 On va ranger l'opération dans une définition de fonction.
 
 On fournit la définition de fonction sous forme de callback en argument. Cette callback sera appelée automatiquement pour chaque élément du tableau => la fonction doit donc avoir un paramètre (qu'on nomme comme on veut) pour que la valeur puisse être injectée.
-
-
 
 ```js
 const names = ["Lucie", "Franck", "Phil"];
@@ -261,7 +245,7 @@ names.forEach(printHello);
 friends.forEach(printHello);
 ```
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach>
 
 ```js
         capitalCities.forEach(city => {
@@ -275,4 +259,3 @@ Ici, pour l'objet <%capitalcities%>, on définit une constante <%city%> qui perm
 C'est un problème qu'on peut rencontrer. Si on gère mal la condition de fin, la boucle continue "pour toujours" (le navigateur peut l'arrêter parfois, ou alors ça plante le navigateur).
 
 => toujours vérifier la "condition de sortie" avant d'appliquer le code
-

@@ -7,7 +7,7 @@ Plutôt que de stocker le mot de passe en clair (ce qui serait une faille de sé
 L'algorithme **Argon2** est actuellement l'un des plus recommandés pour ce type d'usage.
 
 ---
-
+  
 ## Comment hasher un mot de passe avec npm et argon2
 
 ### 🔧 Installation

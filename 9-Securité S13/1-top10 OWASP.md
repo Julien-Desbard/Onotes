@@ -67,7 +67,7 @@ app.use(xss());
 // Autant de failles qui peuvent être exploitées contre votre app
 ```
 
-Pour corriger ça, on modifie ce qui est retourné par le middleware d'erreur en fonction de l'état du site : en dev ou en production : 
+Pour corriger ça, on modifie ce qui est retourné par le middleware d'erreur en fonction de l'état du site : en dev ou en production :
 
 ```js
   res.status(500).json({
@@ -89,7 +89,8 @@ const httpsOptions = {
 };
 ```
 
-Je passe ensuite deux infos à mon serveur : 
+Je passe ensuite deux infos à mon serveur :
+
 ```js
 // Je crée un nouveau serveur en HTTPS via Node
 // Je lui passe :
