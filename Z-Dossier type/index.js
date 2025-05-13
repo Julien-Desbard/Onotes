@@ -3,8 +3,8 @@ import path from "node:path"; // pour gérer les chemins
 import express from "express"; // pour gérer le server
 import session from "express-session"; // pour gérer la session
 import { router } from "./app/routers/router.js";
-import { setupSession } from './app/middlewares/setupsessions.middleware.js';
-import { addUserToLocals } from './app/middlewares/addUserToLocals.middleware.js';
+//import { setupSession } from './app/middlewares/setupsessions.middleware.js';
+//import { addUserToLocals } from './app/middlewares/addUserToLocals.middleware.js';
 
 const app = express();
 

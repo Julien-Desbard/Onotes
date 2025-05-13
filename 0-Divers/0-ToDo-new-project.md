@@ -7,7 +7,7 @@ npm init -y
 
 ```js
 npm install // (installe toutes les dépendances du projet)
-npm install ejs express dotenv express-session sequelize pg
+npm install ejs express dotenv express-session sequelize pg xss-sanitizer cors
 ```
 ### àjouter dans le json 
 
