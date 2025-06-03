@@ -1,5 +1,5 @@
 import 'dotenv/config.js' //importe le fichier .env et stock dans process.env son contenu
-import path from "node:path"; // pour gérer les chemins
+// import path from "node:path"; // pour gérer les chemins 
 import express from "express"; // pour gérer le server
 import session from "express-session"; // pour gérer la session
 import { router } from "./app/routers/router.js";
@@ -8,12 +8,16 @@ import { router } from "./app/routers/router.js";
 
 const app = express();
 
-app.set("view engine", "ejs");
+//systeme de views
+/*app.set("view engine", "ejs");
 // maintenant qu'on a un dossier app, il faut préciser que notre dossier views est dedans et plus à la racine
 // path.join + import.meta.dirname = methode la plus clean pour faire un chemin absolu dans notre projet
-app.set("views", path.join(import.meta.dirname, "app", "views"));
+app.set("views", path.join(import.meta.dirname, "app", "views"));*/
 
-app.use(express.static(path.join(import.meta.dirname, "public")));
+//systeme de SPA : j'indique ou se trouve mon fichier dist 
+//app.use((express.static(path.resolve(import.meta.dirname,"../client/dist"))))
+
+//app.use(express.static(path.join(import.meta.dirname, "public")));
 
 // j'active le middleware pour pouvoir utiliser les formulaires en post
 app.use(express.urlencoded({ extended: true }));

@@ -14,12 +14,14 @@ npm install ejs express dotenv express-session sequelize pg xss-sanitizer cors
 ```js
 "main": "index.js",// dans le prmeier paquet
 "type": "module", // dans le fichier json :
-"scripts": { //dans les scripts
-"dev": "node --watch index.js", //==> app.js  représente le nom du fichier du server à lancer
-"db:create": "psql -U tiramisu_oquiz -f ./data/create_tables.sql", // ici tiramisu_oquizz est le nom de la BDD mais aussi du user qui est admin dessus ==> Mettre le même nom pour les deux sinon le script ne fonctionne pas
-"db:seed": "psql -U tiramisu_oquiz -f ./data/seed_tables.sql",
-"db:reset": "npm run db:create && npm run db:seed"
-},
+ "scripts": {
+    "dev": "node --watch index.js", //==> app.js  représente le nom du fichier du server à lancer
+    "db:create": "node ./src/migrations/01.create-tables.js",// crée les tables à laide de sequelize cf.S12
+    "db:seed": "node ./src/migrations/02.seed-tables.js",// seed les tables à l'aide de sequelize cf. S12
+    "db:reset": "npm run db:create && npm run db:seed",
+    "postinstall": "npm install --prefix client", // install toutes dépendances nécessaire pour API et client dans le cas d'un monodépôt
+       "build" : "npm run buil -- prefix client" // execute la commande qui rappelle le build présent dans le packahe.json du dossier client
+  },
 ```
 Se lance avec la cmd : `npm run dev`
 
