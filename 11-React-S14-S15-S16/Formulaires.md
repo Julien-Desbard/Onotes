@@ -48,3 +48,22 @@ méthode récente :
   onSubmit(macaron);
  };
 ```
+
+## Champ controlé
+
+On peut utuiliser un champ controlé pour utiliser la data saisie par l'utilisateur au fur et à mesure qu'il tape dans un champs input.
+
+Sert par exemple dans un champs de recherche interactif pour filter  des élements selon le critère saisi (Blog o'clock ou l'on filtre en live els posts selon leur catégorie an saisissant le nom de la catégorie dans un champs de recherche)
+
+```jsx
+  Filtre :{" "}
+   <input
+    type="text"
+     // si le user tape sur une touche on modifie le state pour modifier l'affichage
+    onChange={(eventChange) => {
+     setFiltervalue(eventChange.currentTarget.value);
+    }}
+      // la valeur du champs est définie à celle du state 
+    value={filtervalue}
+   />
+```
