@@ -30,6 +30,47 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
     </Card>
   );
 }
+```
+## Props multiples
 
+si j'envoie plusieurs props, je peux leur faire un interface dédié dans le composant : 
+
+```jsx
+interface HomeProps {
+  isLoading: boolean;
+  error: string;
+  recipes: IRecipe[];
+}
+
+export default function HomePage({ isLoading, error, recipes }: HomeProps) {
+  return (
+    <main className="main">
+      <h1>Nos recettes</h1>
+
+      <p>Nos 6 recettes</p>
+
+      {isLoading && <div>loading recipes...</div>}
+      {error && <div>{error}</div>}
+
+      <div className="cardContainer">
+        {recipes.map((recipe) => (
+          <RecipeCard key={recipe.id} recipe={recipe} />
+        ))}
+      </div>
+    </main>
+  );
+}
 ```
 
+et dans App, je leur envoie ça : 
+
+```jsx
+<Routes>
+    <Route
+    path="/"
+    element={
+        <HomePage isLoading={isLoading} error={error} recipes={recipes} />
+    }
+    />
+</Routes>
+```

@@ -1,4 +1,4 @@
-# les bases (cf. projet perso S17 Orecipes)
+# Déclaration useState (cf. projet perso S17 Orecipes)
 
 Si je fais ça, typescript pense que je veux sotcker un tableau vide pour toujours :
 
@@ -7,6 +7,8 @@ Si je fais ça, typescript pense que je veux sotcker un tableau vide pour toujou
   const [recipes, setRecipes] = useState([]);
 
 ```
+
+## Tableau d'interface
 
 Pour éviter ça, je créer une interface indiquant ce que mon tableau va contenir:
 
@@ -33,9 +35,17 @@ export default interface IRecipe {
 
 Si l'interface doit être créée à partir d'un Json (API), on peut le fournir à l'IA pour en tirer l'interface
 
-Je lui assigne ensuite cet interfface comme un générique
+### Interface générique
+
+Je lui assigne ensuite cet interface comme un générique
 
 ```jsx
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
 
+```
+
+Mon interface générique peut évioluer dans le temps, ici null d'abord losqu'on déclare le state et string plus tard : 
+
+```jsx
+  const [token, setToken] = useState<null | string>(null);
 ```

@@ -12,10 +12,15 @@
 - Pour importer un script : `\i /chemin/vers/fichier.sql`
 - Forcer la suppression d'une table : `DROP TABLE IF EXISTS nom_de_la_table CASCADE;`
 
+```js
+//                 user   : mdp @hote BDD :port / nom de la BDD  
+PG_URL=postgres://okanban2:admin@localhost:5432/okanban2
+```
+
 ## Copier / coller
 
-CREATE USER chatbot WITH LOGIN PASSWORD 'admin';
-CREATE DATABASE chatbot OWNER chatbot;
+CREATE USER okanban2 WITH LOGIN PASSWORD 'admin';
+CREATE DATABASE okanban2 OWNER okanban2;
 \c chatbot;
 
 

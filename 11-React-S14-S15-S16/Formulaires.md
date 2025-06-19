@@ -49,7 +49,32 @@ méthode récente :
  };
 ```
 
-## Champ controlé
+## Formulaire avec actin
+
+Avec action sur mon formulaire (vs handleSubmit), je peux directement passer les infos en formData et les récupérer avec formData.get : 
+
+```jsx
+<header className="header">
+  <img src={logo} alt="logo orecipes" className="logo" />
+  <form
+    className="loginForm"
+    action={(formData) => {
+      const email = formData.get('email');
+      const password = formData.get('password');
+    }}
+  >
+    <FloatingLabel controlId="email" label="Email address" className="mb-3">
+      <Form.Control type="text" id="email" name="email" />
+    </FloatingLabel>
+    <FloatingLabel controlId="password" label="Password" className="mb-3">
+      <Form.Control type="password" id="password" name="password" />
+    </FloatingLabel>
+    <Button type="submit">OK</Button>
+  </form>
+</header>
+```
+
+### Champ controlé
 
 On peut utuiliser un champ controlé pour utiliser la data saisie par l'utilisateur au fur et à mesure qu'il tape dans un champs input.
 
